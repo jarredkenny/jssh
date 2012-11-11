@@ -11,8 +11,8 @@ are completely managed using its built in command line features.
 Installing
 ----------
 
-To install jssh on your system, simply run the INSTALL script. If run as a standard user, it will be installed only for your user.
-If run as root, it will be installed system wide.
+To install jssh on your system, simply run the INSTALL script. The install script requires root to copy the script into /usr/bin, If you are not root
+you may still use jssh by calling the script directly. 
 
 jssh no longer installs plink for you. If you choose to install plink manually it will be used automatically by jssh.
 If you do not have plink, jssh will aid you in setting up ssh keys for auto-login when you add a server to the database. (jssh --add-server)
