@@ -10,9 +10,12 @@ are completely managed using its built in command line features.
 
 Installing
 ----------
-To install jssh simply run the INSTALL script in the provided archive. 
-This will ensure the correct build of plink is being installed to your 
-system aswell as install jssh system wide.
+
+To install jssh on your system, simply run the INSTALL script. If run as a standard user, it will be installed only for your user.
+If run as root, it will be installed system wide.
+
+jssh no longer installs plink for you. If you choose to install plink manually it will be used automatically by jssh.
+If you do not have plink, jssh will aid you in setting up ssh keys for auto-login when you add a server to the database. (jssh --add-server)
 
 Once installed, each system user has his/her own database of connection 
 information located in ~/.jssh/
