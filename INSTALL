@@ -1,0 +1,30 @@
+#! /bin/sh
+
+if [ "$(id -u)" != "0" ]; then
+   echo "Installer requires root. Exiting..." 1>&2
+   exit 1
+fi
+
+echo "Checking environment..."
+PLINK=$(which plink 2>/dev/null)
+if [ ! -x "$PLINK" ] ; then
+    echo "You do not have plink installed..."
+    echo "Installing plink..."
+    ARCH=$(uname -m)
+    cd files
+    tar xf plink-$ARCH.tar
+    cp plink-$ARCH/plink /usr/bin/
+    echo "Plink has been installed!"
+    cd ..
+fi
+
+echo "Installing jssh..."
+cd files
+cp jssh/jssh /usr/bin/jssh
+chmod +x /usr/bin/jssh
+echo "Done!"
+
+
+
+
+
